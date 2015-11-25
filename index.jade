@@ -1,287 +1,185 @@
 doctype html
 html
-  head
-      title Burn Everything Down and Use Flex By Default
-      meta(charset='utf-8')
-      script(src='slides.js')
-      link(href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,700' rel='stylesheet' type='text/css')
-      link(href='styles.css'  rel='stylesheet' type='text/css')
-    body
-      section.slides.layout-regular.template-default
+	head
+			title 📦 Modules Everywhere
+			meta(charset='utf-8')
+			script(src='slides.js')
+			link(href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,700' rel='stylesheet' type='text/css')
+			link(href='styles.css'  rel='stylesheet' type='text/css')
+		body
+			section.slides.layout-regular.template-default
 
-        article
-          p Yaay the projector works
-          small You may need to zoom out a little if the text is too big
+				article
+					p Yaay the projector works
+					small You may need to zoom out a little if the text is too big
 
-        section.slides.layout-regular.template-default
-        article.first
-          h1(style="font-size:96px; text-transform: uppercase") Burn Everything Down<br/> & Use Flex
-          br
-          a(href='http://mikemaccana.com') mikemaccana.com
-          a(href='http://twitter.com/mikemaccana') @mikemaccana
+				section.slides.layout-regular.template-default
+				article.first
+					h1(style="font-size:96px; text-transform: uppercase") Modules Everywhere
+					br
+					a(href='http://mikemaccana.com') mikemaccana.com
+					a(href='http://twitter.com/mikemaccana') @mikemaccana
 
-        article
-          h2(style="font-size:60px;") I'll tweet a link out to the slides after the talk.
-          img(src='images/Twitter_logo_white.png', style="height: 260px; width: 300px; margin:100px auto")
-          h2
-            a(href='http://twitter.com/mikemaccana', target='_blank') @mikemaccana
+				article
+					h2(style="font-size:60px;") I'll tweet a link out to the slides after the talk.
+					img(src='images/twitter-logo.png', style="height: 260px; width: 300px; margin:100px auto")
+					h2
+						a(href='http://twitter.com/mikemaccana', target='_blank') @mikemaccana
 
-        article
-          div.row("display: flex; justify-content: center; flex-direction: row; align-items: flex-start;")
-            img.high(src="images/uncompromise.png", style="height: 150px; float; left; padding: 6px")
-            img.high(src="images/firework.png", style="height: 150px; float; left; padding: 6px")
-            img.high(src="images/mycognition.png", style="height: 150px; float; left; padding: 6px")
-            img.high(src="images/facebook-ratings-and-reviews.png", style="height: 150px; float; left; padding: 6px")
-            img.high(src="images/ginjs.png", style="height: 150px; float; left; padding: 6px")
-            img.high(src="images/google-10th-birthday-germany.png", style="height: 150px; float; left; padding: 6px")
-          h3 Built stuff for Google, Microsoft, <br/>and a whole bunch of startups.
+				article
+					div.row("display: flex; justify-content: center; flex-direction: row; align-items: flex-start;")
+						img.high(src="images/uncompromise.png", style="height: 150px; float; left; padding: 6px")
+						img.high(src="images/firework.png", style="height: 150px; float; left; padding: 6px")
+						img.high(src="images/mycognition.png", style="height: 150px; float; left; padding: 6px")
+						img.high(src="images/facebook-ratings-and-reviews.png", style="height: 150px; float; left; padding: 6px")
+						img.high(src="images/ginjs.png", style="height: 150px; float; left; padding: 6px")
+						img.high(src="images/google-10th-birthday-germany.png", style="height: 150px; float; left; padding: 6px")
+					h3 Built stuff for Google, Microsoft, <br/>and a whole bunch of startups.
 
-        article
-          video(src="images/certsimple-live-validation-full.mp4" loop autoplay)
-          h2 CertSimple
+				article
+					video(src="images/certsimple-live-validation-full.mp4" loop autoplay)
+					h2 CertSimple
 
-        article.plain
-          h2 Fast painless EV SSL
-          h1
-            a(href="http://certsimple.com", style="color: white; font-size: 96px") certsimple.com
+				article.plain
+					h2 Fast painless EV SSL
+					h1
+						a(href="http://certsimple.com", style="color: white; font-size: 96px") certsimple.com
 
-        article
-          h1 How I currently style things
-          h3 I hope it will improve your styling.
+				article
+					h1 How CertSimple is built
+					ul.build
+						li We use npm on the backend
+						li We use npm on the frontend
+						li All our code lives in npm modules
 
+				article
+					p Why we chose npm
+					p How you can use npm
+					p Things to be aware of
 
-        article
-          h1 Evolution of a web developer
+				article
+					h1 npm is where the packages are
+					img.high(src="images/module-counts.png", style="height: 500px")
+					small JSPM: 451 modules
 
-        article
-          h1 Stage 1
-          p Style it till it works
+				article
+					h1 Every frontend package  CertSimple needed was officially maintained on npm
+					img.high(src="images/packages.png", style="height: 650px")
 
-        article
-          h1 Stage 2
-          p Understand CSS, it's limits, and hack around them
+				article
+					h1 frontend attitude to npm
+					img.high(src="images/frontend-attitude.png", style="height: 650px")
 
-        article
-          img.high(src="images/you-are-here.png", style="height: 200px")
-          h1 Stage 3
-          p Develop or use tools to manage complexity
+				article
+					h1 Other module formats?
+					ul.build
+						li window globals are dead
+						li RequireJS never had a module repository - dead
+						li UMD only exists because of globals and Require
+						li Very few ES6 packages, and they’ll be on npm anyway
 
-        article
-          h1 CSS frameworks
+				article
+					h1 USE REAL PROJECTS, NOT STACKOVERFLOW
 
-        article
-          h1 What do we want?
-          p Ability to move things and have them still look right
-          p Change the look of elements without changing HTML
-          p Be able to predict how an element is styled
-          p Readable code
+				article
+					h1 modules everywhere
+					img.high(src="images/izs.png", style="height: 500px")
 
-        article
-          h1 Bootstrap
-          p Classnames example 'col-sm-4 m-b-lg'
-          p classnames used for appearance
-          small large, column, how many columns
-          small appearance now determined in either HTML or CSS
-          p classes contain element names
-          p Default hacks on most elements
+				article
+					h1 Why just modules?
+					ul.build
+						li Simple imports
+						li Modules make great containers
+						li Consistency
+						li Easier to open source
 
-        article
-          h1 BEM
-          p Overloads the existing term 'block' to mean 'component'
-          p Repeats styling in class name, since a BEM 'block' or BEM 'element' often duplicate actual elements.
-          p Assumes non 1:1 item / element mismatch
+				article
+					h2 Building,  & bundling npm modules
+					img.high(src="images/bundling-comparison.png", style="height: 500px")
 
-        article
-          h1 Frameworks generally make it worse
-          p Appearance controlled in class names
-          p Duplication
-          p Can't predict a class name an element will use
-          p Hacks everywhere
+				article
+					h1 GULP AND BROWSERIFY
 
-        article
-          img(src="images/everyone-hates-bem.png", style="width: 900px;")
-
-        article
-          img(src="images/login-bem.png", style="width: 900px;")
-
-        article
-          img(src="images/login-faslap.png", style="width: 900px;")
-
-        article
-          h1 Seperation of concerns?
-          ul.build
-            li Actually just seperation of technologies
-            li In JavaScript, this is the login button
-            li In HTML, this is the login button
-            li In CSS, this is the login button
-
-        article
-          h1 Hacks
-          p What do we mean by hacks?
-
-        article
-          h1 Hacks are so common we <br/>no longer think of them as hacks
-          ul.build.flex
-            li
-              span margin: 0 auto;
-              br
-              small Nothing to do with margins
-            li
-              span display: inline-block;
-              br
-              small Not actually an inline-block
-              br
-              small Suddenly whitespace matters
-              br
-              small So font-size: 0;
-            li
-              span display: table-cell
-              br
-              small Not a table cell
+				article
+					h1 Basic browserify
+					.halves.build
+						.half
+							p js/src/index.js
+							img(src="images/src.png" style="padding:20px;")
+							p Imports a module
 
 
-        article
-          h1 Hacks are so common we <br/>no longer think of them as hacks
-          ul.build.flex
-            li
-              span Empty table before: elements
-            li
-              span overflow: hidden;
-              br
-              small Used to give a block layout
-            li
-              span Reordering elements for mobile
+						.half
+							p js/dist/index.js
+							img(src="images/dist.png" style="padding:20px;")
+							p That module, and all it's dependencies
 
-        article
-          h1 Hacks slow us down
-          p Noisy code
-          p Cognitive overhead
+				article
+					h1 What about templates? And styles?
+					img(src="images/a-module.svg", style="height: 500px")
 
-        article
-          h1 Frameworks are fine for the companies that make them
-          p Twitter is company with massive resources<br /> and huge financial incentive to make its products <br />work for users on unmaintained browsers.
+				article
+					h1 Things to know about
+					h2(style="font-size:116px;") 🔥
 
-        article
-          h2 How does this tie in with Flex?
+				article
+					h1 Analysing bundle size
 
-        article
-          h2 Flex isn't just another fix for CSS brokenness
+				article
+					h1 discify
+					img(src="images/discify.png", style="height: 500pxl padding: 20px")
 
-        article
-          h1 Flex is a sensible default
-          ul.build
-            li Flex means we can get rid of the hacks
-            li Getting rid of the hacks means<br /> we can get rid of the frameworks
-            li Getting rid of the frameworks <br />makes our code smaller and easier to manage
+				article
+					h1 Your modules are more interesting than other people's
+					p Create a Sublime .project file that prioritises private npm modules
 
-        article
-          h2(style="font-size:116px;") 🔥
-          h1 Stage 4
-          p Abandon complexity
+				article
+					h1 Deploying
+					p package.json only specifies versions for your immediate dependencies
+					ul.build
+						li a version 1.0.0 - only use b version 1.2.0
+						li b version 1.2.0 - use version c 1.0.0 or newer
+						li c - could be any version newer than 1.0.0
 
-        article
-          h1 "the solution to being bad at writing big things, is to not write big things." - @seldo
+				article
+					h1 npm shrinkwrap
+					p Provides consistent deploys
+					p Specifies the full tree, all the way down
+					p Built into npm
 
-        article
-          h1 AMAZING NEW FRAMEWORK:
+				article
+					h1 npm dedupe
+					p Moves modules to the top so they can be shared
+					p In NPM v3
 
-        article
-          h2 Flex and SASS
-          h1 as little as possible
+				article
+					h1.big What do we get
+					p Modularity!
+					p All aspects of the components - JS, HTML, styling - inside module
+					p Know where to look
 
-        article
-          img(src="images/faslap.png")
+				article
+					h3 Currently used in production on CertSimple
 
-        article
-          h1 Use Flex
-          img(src="images/flex-by-default.png", style="width: 500px;")
-          a(href="https://github.com/facebook/css-layout" target=_blank) Facebook css-layout
+				article
+					h1.big Questions?
+					a(href="http://twitter.com/mikemaccana", style="font-size: 96px; font-weight: 200;") @mikemaccana
+					h2 certsimple.com
 
-        article
-          h1 Use SASS
-          img(src="images/basics.png")
-          h3 Have a small amount of general styles
-          h3 Style everything else under their component
+				article
+					h1.big Thanks
+					a(href="http://twitter.com/mikemaccana", style="font-size: 96px; font-weight: 200;") @mikemaccana
+					h2 certsimple.com
 
-        article
-          p Use an element name if it exists
-          p People will be able to guess it
-          p section, button, footer, q, label, nav
+				article
+					h1 Links
+					a(href="http://www.modulecounts.com/" target=_blank) Module counts 
+					a(href="https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-uglify-sourcemap.md" target=_blank) Browserify + gulp 
+					a(href="http://hughsk.io/disc/" target=_blank) Discify 
+					a(href="https://github.com/substack/brfs" target=_blank) BRFS
+					a(href="https://www.npmjs.com/package/sass-npm" target=_blank) sass-npm
+					a(href="https://gist.github.com/mikemaccana/fe5c1a83bcbdc0157534" target=_blank) Sublime prioritise private modules 
 
-        article
-          p If an element doesn't exist, add a class
-          p .avatar, .feature, .status-badge, .breadcrumbs
 
-        article
-          h1 Use SASS
-          h3 Use a class name for what it is
-          h3 Use SASS for what it looks like
 
-        article
-          h1 Use SASS
-          h3 Use SASS mixins to share behavior
-          p Keeps visual control in stylesheet
-          p No need to add HTML
-          p Small overhead in compiled code is worth it
-
-        article
-          h1 Styling links in the footer
-          .halves.build
-            .half
-              img(src="images/bootstrap.png" height=200, style="background:white; padding:20px; border-radius:50%;")
-              p bs-docs-footer-links text-muted
-            .half
-              img(src="images/faslap.png" height=200, style="background:white; padding:20px; border-radius:50%;")
-              p footer .links
-
-        article
-          h1 Designing
-          p Every ☒ in your design is a block element.
-          p Decide how you want the block to flow and let flex do the work
-
-        article
-          h1 Reflowing for mobile
-          .halves.build
-            .half
-              img(src="images/mobile.png")
-              p Mobile
-            .half
-              img(src="images/desktop.png")
-              p Desktop
-              p CSS nth child, Flex row-reverse
-
-        article
-          h1 Example
-          p How do I put my product features beside each other?
-          p .features, specify width, put them beside each other
-
-        article
-          h1 Handling specificity - classes more specific than elements
-          p Hence style things relative to their component
-
-        article
-          h1 No 'container' or 'wrapper' divs
-          p Flex means you shouldn't need to use these
-          p If you are adding blocks that aren't in your design - containers, wrappers etc. - you are performing some kind of hack. This should evaluated.
-
-        article
-          h1 What do we get
-          p Higher signal-noise
-          p Visual appearance is 100% in stylesheet
-          p Know where in stylesheet to look
-          small 'footer .links'
-          p All styling is deliberate
-          small not side effects of hacks
-
-        article
-          h2.big The point
-
-        article
-          h1 Current web standards and preprocessors have what you want
-          h3 Currently used in production on CertSimple
-
-        article
-          h1.big Questions?
-          a(href="http://twitter.com/mikemaccana", style="font-size: 96px; font-weight: 200;") @mikemaccana
-          p certsimple.com
 
