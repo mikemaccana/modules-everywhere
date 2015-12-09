@@ -1,7 +1,7 @@
 doctype html
 html
 	head
-			title 📦 Modules Everywhere
+			title 📦 npm everywhere
 			meta(charset='utf-8')
 			script(src='slides.js')
 			link(href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,700' rel='stylesheet' type='text/css')
@@ -13,18 +13,17 @@ html
 					p Yaay the projector works
 					small You may need to zoom out a little if the text is too big
 
-				section.slides.layout-regular.template-default
+				article
+					h2 NOT A BROWSERIFY TALK
+
 				article.first
-					h1(style="font-size:96px; text-transform: uppercase") Modules Everywhere
+					h1(style="font-size:96px; text-transform: uppercase") NPM Everywhere
 					br
-					a(href='http://mikemaccana.com') mikemaccana.com
-					a(href='http://twitter.com/mikemaccana') @mikemaccana
+					h3
+						a(href='http://twitter.com/mikemaccana',style="text-decoration: none;") @mikemaccana
 
 				article
-					h2(style="font-size:60px;") I'll tweet a link out to the slides after the talk.
-					img(src='images/twitter-logo.png', style="height: 260px; width: 300px; margin:100px auto")
-					h2
-						a(href='http://twitter.com/mikemaccana', target='_blank') @mikemaccana
+					img.high(src="images/linux.png")
 
 				article
 					div.row("display: flex; justify-content: center; flex-direction: row; align-items: flex-start;")
@@ -34,16 +33,28 @@ html
 						img.high(src="images/facebook-ratings-and-reviews.png", style="height: 150px; float; left; padding: 6px")
 						img.high(src="images/ginjs.png", style="height: 150px; float; left; padding: 6px")
 						img.high(src="images/google-10th-birthday-germany.png", style="height: 150px; float; left; padding: 6px")
-					h3 Built stuff for Google, Microsoft, <br/>and a whole bunch of startups.
+					h3 Built web stuff for Google, Microsoft, <br/>and a whole bunch of startups.
 
 				article
-					video(src="images/certsimple-live-validation-full.mp4" loop autoplay)
-					h2 CertSimple
+					img(src="images/ev-ssl.png")
+					h2 <br/>EV SSL
+					p Checks the identity behind the certificate
+					h1 Takes "7-10 days"
 
 				article.plain
-					h2 Fast painless EV SSL
-					h1
-						a(href="http://certsimple.com", style="color: white; font-size: 96px") certsimple.com
+					h2 CertSimple do this in an average of 5 hours.
+
+				article
+					h1 Connects to:
+					ul.build
+						li Governments in 62 countries
+						li Independent business directories
+						li Data cleansing services
+						li DNS/whois
+						li Fuzzy matching
+						li webcrypto / custom openssl / powershell generation
+						li SSE for realtime updates
+						li Certificate Authority
 
 				article
 					h1 How CertSimple is built
@@ -51,11 +62,16 @@ html
 						li We use npm on the backend
 						li We use npm on the frontend
 						li All our code lives in npm modules
+						li All our components live in npm modules
+						li All our styles live in npm modules
 
 				article
 					p Why we chose npm
 					p How you can use npm
-					p Things to be aware of
+					p All the things you'll wish you knew earlier
+
+				article
+					h1 WHY NPM
 
 				article
 					h1 npm is where the packages are
@@ -63,19 +79,23 @@ html
 					small JSPM: 451 modules
 
 				article
-					h1 Every frontend package  CertSimple needed was officially maintained on npm
+					h1 Every package  we needed was officially maintained on npm
 					img.high(src="images/packages.png", style="height: 650px")
-
-				article
-					h1 Things we didn't yet know we needed
-					ul.build
-						li country-data
-						li superagent
-						li sorts
 
 				article
 					h1 frontend attitude to npm
 					img.high(src="images/frontend-attitude.png", style="height: 650px")
+
+				article
+					h1 USE MAINTAINED OPEN SOURCE PROJECTS
+					p NOT CODE COPIED FROM STACKOVERFLOW
+
+				article
+					h1 Things we didn't know we needed
+					ul.build
+						li country-data
+						li sorts
+						li vatrates
 
 				article
 					h1 Other module formats?
@@ -86,23 +106,23 @@ html
 						li Very few ES6 packages, and they’ll be on npm anyway
 
 				article
-					h1 USE REAL PROJECTS, NOT STACKOVERFLOW
+					h1 MODULES EVERYWHERE
 
 				article
-					h1 modules everywhere
+					h3 Our node backend is also pure modules
 					img.high(src="images/izs.png", style="height: 500px")
 
 				article
 					h1 Why just modules?
 					ul.build
 						li Simple imports
-						li Modules make great containers
-						li Consistency
 						li Easier to open source
+						li Write it like you'd publish it.
 
 				article
-					h2 Building,  & bundling npm modules
-					img.high(src="images/bundling-comparison.png", style="height: 500px")
+					h2 Bundling npm modules<br/>
+					p Your code + dependencies
+					img(src="images/bundling-comparison.png", style="margin-top: 100px")
 
 				article
 					h1 GULP AND BROWSERIFY
@@ -113,36 +133,85 @@ html
 						.half
 							p js/src/index.js
 							img(src="images/src.png" style="padding:20px;")
-							p Imports a module
-
 
 						.half
+							p bundle
 							p js/dist/index.js
 							img(src="images/dist.png" style="padding:20px;")
-							p That module, and all it's dependencies
+							h3 bundle contains all the dependencies
 
 				article
-					h1 What about templates? And styles?
-					img(src="images/a-module.svg", style="height: 500px")
+					h1 frontend module - package.json
+					img(src="images/package-json.png" style="height: 500px;")
 
 				article
-					h1 Things to know about
-					h2(style="font-size:116px;") 🔥
+					h1 frontend module - index.js
+					img(src="images/browserify.png" style="height: 500px;")
 
 				article
-					h1 Analysing bundle size
+					h1 GULP AND BROWSERIFY
+					h2 THE REST
+
+				article
+					h1 What about HTML?
+
+				article
+					h2 brfs
+					h3 Include non-JavaScript files
+
+				article
+					h1 brfs
+					img(src="images/brfs.png" style="height: 500px;")
+
+				article
+					h1 STYLING
+
+				article
+					h1 Styling
+					p Use 'sass-npm' to import SASS from npm files.
+					p Style things relative to component
+
+				article
+					h1 sass-npm
+					img(src="images/sass.png" style="height: 500px;")
+
+				article
+					h1 COMPONENTS
+
+				article
+					p A module per component
+
+				article
+					img.high.wide(src="images/js-and-html.svg")
+
+				article
+					img.high.wide(src="images/sass.svg")
+
+				article
+					h1 KEEPING BUNDLES SMALL
+
+				article
+					h2 Not delivering a 3MB JS bundle
 
 				article
 					h1 discify
-					img(src="images/discify.png", style="height: 500pxl padding: 20px")
+					img(src="images/discify.png", style="height: 500px padding: 20px")
 
 				article
-					h1 Your modules are more interesting than other people's
-					p Create a Sublime .project file that prioritises private npm modules
+					h1 KEEPING YOUR CODE RELEVANT
 
 				article
-					h1 Deploying
-					p package.json only specifies versions for your immediate dependencies
+					p Sublime .project prioritises private modules
+
+				article
+					h1 sublime .project file
+					img(src="images/sublime.png", style="height:800px padding: 20px")
+
+				article
+					h1 DEPLOYING
+
+				article
+					p package.json isn't enough
 					ul.build
 						li a version 1.0.0 - only use b version 1.2.0
 						li b version 1.2.0 - use version c 1.0.0 or newer
@@ -152,24 +221,32 @@ html
 					h1 npm shrinkwrap
 					p Provides consistent deploys
 					p Specifies the full tree, all the way down
-					p Built into npm
+					p Built into npm (use npm v3)
 
 				article
-					h1 npm dedupe
-					p Moves modules to the top so they can be shared
-					p In NPM v3
+					h1.big WE GET
+					ul.build
+						li Access to 230,000 JavaScript modules
+						li We can find stuff - JS, HTML & SASS in one place
+						li We can reuse anything without extra work!
 
 				article
-					h1.big What do we get
-					p Modularity!
-					p All aspects of the components - JS, HTML, styling - inside module
-					p Know where to look
+					p This is what we use in production at CertSimple
 
 				article
-					h3 Currently used in production on CertSimple
+					h1 Follow me.
+					h2(style="font-size:60px;") I will tweet storm links to everything now.
+					img(src='images/twitter-logo.png', style="height: 260px; width: 300px; margin:100px auto")
+					h2
+						a(href='http://twitter.com/mikemaccana', target='_blank') @mikemaccana
 
 				article
-					h1.big Questions?
+					h1 Launching something?
+					h1 $50 off CertSimple
+
+				article
+					h1 Stickers!
+					img(src='images/certsimple-stickers.png')
 
 				article
 					h1.big Thanks
@@ -182,6 +259,7 @@ html
 					a(href="https://github.com/gulpjs/gulp/blob/master/docs/recipes/browserify-uglify-sourcemap.md" target=_blank) Browserify + gulp 
 					a(href="http://hughsk.io/disc/" target=_blank) Discify 
 					a(href="https://github.com/substack/brfs" target=_blank) BRFS
+					a(href="http://www.ractivejs.org" target=_blank) ractive
 					a(href="https://www.npmjs.com/package/sass-npm" target=_blank) sass-npm
 					a(href="https://gist.github.com/mikemaccana/fe5c1a83bcbdc0157534" target=_blank) Sublime prioritise private modules 
 
